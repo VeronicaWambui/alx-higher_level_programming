@@ -1,3 +1,3 @@
 #!/bin/bash
-# Display size of body of response; Usage: ./0-body_size.sh 0.0.0.0:5000
-curl -sI "$1" | grep 'Content-Length:' | cut -f2 -d ' '
+# Takes in a URL and sends a req
+curl -sI "$1" | grep 'Content-Length' | awk '{print $2}'
